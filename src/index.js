@@ -1,15 +1,7 @@
-const rootElement = document.querySelector(".vanilla-chatbot");
+import ToggleWindow from "./components/mainDiv.js";
 
-const renderChatBot = (rootElement, config, messageParser, actionProvider) => {
-  const header = document.createElement("div");
-  header.textContent = `Conversation with ${config.botName}`;
-  header.classList.add("title");
-
-  rootElement.appendChild(header);
+const renderDiscountWindow = () => {
+  ToggleWindow();
 };
 
-const config = {
-  botName: "Nalsh",
-};
-
-renderChatBot(rootElement, config);
+renderDiscountWindow();
