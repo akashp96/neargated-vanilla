@@ -1,14 +1,21 @@
 export const title = () => {
   const titleAcc = document.createElement("h3");
-  titleAcc.textContent = "Hi Akash";
+  titleAcc.textContent = "Hi New User";
   titleAcc.classList.add("account-header");
 
   return titleAcc;
 };
 
 export const ParagraphAfterLogin = () => {
+  const wholediv = document.createElement("div");
+  wholediv.classList.add("account-main");
+
   const paradiv = document.createElement("div");
-  paradiv.classList.add("account-details");
+  paradiv.classList.add("account-details-loggedin");
+
+  const botimage = document.createElement("img");
+  botimage.classList.add("bot-after");
+  botimage.src = "/src/assets/bot.png";
 
   const list = document.createElement("ul");
   list.classList.add("list");
@@ -24,11 +31,20 @@ export const ParagraphAfterLogin = () => {
   list.appendChild(li2);
 
   paradiv.appendChild(list);
+  wholediv.appendChild(botimage);
+  wholediv.appendChild(paradiv);
 
-  return paradiv;
+  return wholediv;
 };
 
 export const ParagraphBeforeLogin = () => {
+  const wholediv = document.createElement("div");
+  wholediv.classList.add("account-main");
+
+  const botimage = document.createElement("img");
+  botimage.classList.add("bot");
+  botimage.src = "/src/assets/bot.png";
+
   const paradiv = document.createElement("div");
   paradiv.classList.add("account-details");
 
@@ -38,6 +54,8 @@ export const ParagraphBeforeLogin = () => {
     "Please Login to your NEAR wallet to avail awesome discounts.";
 
   paradiv.appendChild(info);
+  wholediv.appendChild(botimage);
+  wholediv.appendChild(paradiv);
 
-  return paradiv;
+  return wholediv;
 };

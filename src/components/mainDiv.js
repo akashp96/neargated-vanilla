@@ -1,4 +1,4 @@
-import { LoginButton, LogoutButton } from "./buttons.js";
+import { LoginButton, LogoutButton, Hamburger } from "./buttons.js";
 import {
   title,
   ParagraphAfterLogin,
@@ -19,14 +19,16 @@ const ToggleWindow = () => {
   const Title = title();
   const MidtableBefore = ParagraphBeforeLogin();
   const MidtableAfter = ParagraphAfterLogin();
+  const MenuOpen = Hamburger();
 
-  buttonsDiv.appendChild(Login);
-  //   buttonsDiv.appendChild(Logout);
+  // buttonsDiv.appendChild(Login);
+  buttonsDiv.appendChild(Logout);
   mainWindow.appendChild(Title);
-  //   mainWindow.appendChild(MidtableAfter);
-  mainWindow.appendChild(MidtableBefore);
+  mainWindow.appendChild(MidtableAfter);
+  // mainWindow.appendChild(MidtableBefore);
   mainWindow.appendChild(buttonsDiv);
   rootElement.appendChild(mainWindow);
+  rootElement.appendChild(MenuOpen);
 };
 
 export default ToggleWindow;
