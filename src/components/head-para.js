@@ -6,7 +6,7 @@ export const title = (account) => {
   return titleAcc;
 };
 
-export const ParagraphAfterLogin = () => {
+export const ParagraphAfterLogin = (Bot) => {
   const wholediv = document.createElement("div");
   wholediv.classList.add("account-main");
 
@@ -15,7 +15,7 @@ export const ParagraphAfterLogin = () => {
 
   const botimage = document.createElement("img");
   botimage.classList.add("bot-after");
-  botimage.src = "/src/assets/bot.png";
+  botimage.src = { Bot };
 
   // const list = document.createElement("ul");
   // list.classList.add("list");
@@ -41,13 +41,13 @@ export const ParagraphAfterLogin = () => {
   return wholediv;
 };
 
-export const ParagraphBeforeLogin = () => {
+export const ParagraphBeforeLogin = (Bot) => {
   const wholediv = document.createElement("div");
   wholediv.classList.add("account-main");
 
   const botimage = document.createElement("img");
   botimage.classList.add("bot");
-  botimage.src = "/src/assets/bot.png";
+  botimage.src = { Bot };
 
   const paradiv = document.createElement("div");
   paradiv.classList.add("account-details");

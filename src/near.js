@@ -3,7 +3,7 @@ import ToggleWindow from "./components/mainDiv.js";
 const CONTRACT_NAME = "rtb_v10.liv1.testnet";
 const testnetserver = "https://rpc.testnet.near.org";
 
-const NearLoad = () => {
+const NearLoad = (Bot) => {
   function getConfig() {
     return {
       keyStore: new nearApi.keyStores.BrowserLocalStorageKeyStore(),
@@ -66,9 +66,9 @@ const NearLoad = () => {
       // console.log("wallet ->", wallet);
 
       if (!wallet.isSignedIn()) {
-        ToggleWindow(false, wallet, currentAccount);
+        ToggleWindow(false, wallet, currentAccount, Bot);
       } else {
-        ToggleWindow(true, wallet, currentAccount);
+        ToggleWindow(true, wallet, currentAccount, Bot);
       }
     }
   );

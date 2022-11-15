@@ -14,9 +14,9 @@ import {
 const rootElement = document.querySelector(".vanilla-chatbot");
 const CONTRACT_NAME = "rtb_v10.liv1.testnet";
 
-const ToggleWindow = (loggedIn, wallet, currentAccount) => {
+const ToggleWindow = (loggedIn, wallet, currentAccount, Bot) => {
   const Loader = LoginLoader();
-  const MidtableBefore = ParagraphBeforeLogin();
+  const MidtableBefore = ParagraphBeforeLogin(Bot);
   const MenuOpen = Hamburger();
   const Discount = ApplyDiscount();
 
@@ -51,7 +51,7 @@ const ToggleWindow = (loggedIn, wallet, currentAccount) => {
     console.log(user.accountId);
     mainWindow.appendChild(title(user.accountId));
     buttonsDiv.appendChild(Logout);
-    mainWindow.appendChild(ParagraphAfterLogin());
+    mainWindow.appendChild(ParagraphAfterLogin(Bot));
     mainWindow.appendChild(Discount);
     mainWindow.appendChild(buttonsDiv);
   } else {

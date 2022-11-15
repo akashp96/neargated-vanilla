@@ -1,5 +1,6 @@
 import NearLoad from "./near.js";
 import "./index.css";
+import Bot from "./assets/bot.png";
 
 window.onload = () => {
   const font = document.createElement("link");
@@ -20,7 +21,7 @@ window.onload = () => {
   data.async = true;
   data.onload = () => {
     console.log("near loaded");
-    NearLoad();
+    NearLoad(Bot);
   };
   document.body.append(font);
   document.body.append(font2);
