@@ -1,6 +1,6 @@
-export const title = () => {
+export const title = (account) => {
   const titleAcc = document.createElement("h3");
-  titleAcc.textContent = "Hi New User";
+  titleAcc.textContent = `Hi ${account}`;
   titleAcc.classList.add("account-header");
 
   return titleAcc;
@@ -17,20 +17,24 @@ export const ParagraphAfterLogin = () => {
   botimage.classList.add("bot-after");
   botimage.src = "/src/assets/bot.png";
 
-  const list = document.createElement("ul");
-  list.classList.add("list");
-  const li1 = document.createElement("li");
-  li1.classList.add("listitem");
-  const li2 = document.createElement("li");
-  li2.classList.add("listitem");
+  // const list = document.createElement("ul");
+  // list.classList.add("list");
+  // const li1 = document.createElement("li");
+  // li1.classList.add("listitem");
+  // const li2 = document.createElement("li");
+  // li2.classList.add("listitem");
 
-  li1.textContent = "Token Amount";
-  li2.textContent = "Remaining Token Amount";
+  // li1.textContent = `Balance - ${balance}`;
+  // li2.textContent = `Locked Balance - ${lockedBalance}`;
 
-  list.appendChild(li1);
-  list.appendChild(li2);
+  const info = document.createElement("p");
+  info.classList.add("infoitem");
+  info.textContent = "Yay! You successfully connected your account.";
 
-  paradiv.appendChild(list);
+  // list.appendChild(li1);
+  // list.appendChild(li2);
+
+  paradiv.appendChild(info);
   wholediv.appendChild(botimage);
   wholediv.appendChild(paradiv);
 

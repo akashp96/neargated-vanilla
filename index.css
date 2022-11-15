@@ -14,7 +14,7 @@ body {
 }
 
 .outer-div {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -112,9 +112,9 @@ body {
 }
 
 .list {
-  list-style: disc;
-  margin: -1rem 0 0 -4%;
-  /* padding-inline-start: 0; */
+  list-style: none;
+  margin: -1rem 0.5rem 0 0.5rem;
+  padding-inline-start: 0;
   color: #ffffff;
 }
 
@@ -122,7 +122,7 @@ body {
   font-size: 13.5px;
   font-weight: 400;
   text-align: left;
-  padding: 0;
+  padding: 2px 10px;
 }
 
 .infoitem {
@@ -195,16 +195,20 @@ canvas:empty {
 .button-loader {
   border: none;
   outline: none;
-  display: none;
+  display: block;
   position: relative;
   padding: 14px 32px;
-  margin: auto auto 0.2rem auto;
+  margin: auto auto;
+  width: 90%;
   text-align: center;
   background-color: var(--first-color);
-  color: var(--text-color);
+  color: #000;
   font-size: 16px;
   border-radius: 12px;
-  box-shadow: 0 15px 20px rgba(229, 211, 46, 0.222);
+  -moz-appearance: button;
+  appearance: button;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.177);
+  transition: all 0.3s ease 0s;
   overflow: hidden;
   cursor: wait;
 }
@@ -238,32 +242,88 @@ canvas:empty {
 }
 
 .menu-open {
-  position: absolute;
-  bottom: 20px;
+  position: fixed;
   right: 20px;
+  bottom: 20px;
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  border-style: none;
   filter: drop-shadow(4px 14px 14px rgba(0, 0, 0, 0.164));
   background-color: #000;
   cursor: pointer;
+  overflow: visible;
+  z-index: 9;
 }
 
-.menu-line1,
-.menu-line2,
-.menu-line3 {
+.menu-open span,
+.menu-open span::before,
+.menu-open span::after {
+  background: #e2cb00;
+  display: block;
   height: 2px;
-  border-radius: 50px;
-  background-color: #e2cb00;
-  margin: 5px auto;
+  opacity: 1;
+  position: absolute;
+  transition: 0.3s ease-in-out;
 }
-.menu-line1 {
-  width: 15px;
+
+.menu-open span:before,
+.menu-open span:after {
+  content: "";
 }
-.menu-line2 {
+.menu-open span {
+  right: 12px;
+  top: 25px;
   width: 25px;
 }
-.menu-line3 {
+.menu-open span:before {
+  left: 5px;
+  top: -10px;
   width: 15px;
+}
+.menu-open span:after {
+  left: 5px;
+  top: 10px;
+  width: 15px;
+}
+
+.menu-open.close span {
+  transform: rotate(-45deg);
+  top: 25px;
+  width: 25px;
+}
+.menu-open.close span:before {
+  top: 0px;
+  left: 0px;
+  transform: rotate(90deg);
+  width: 25px;
+}
+.menu-open.close span:after {
+  top: 0px;
+  left: 0;
+  transform: rotate(90deg);
+  opacity: 0;
+  width: 0;
+}
+
+.discount-button {
+  border: 2px solid #5bc236;
+  color: #5bc236;
+  padding: 14px 32px;
+  margin: 0 0 -2rem 0;
+  width: 80%;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  -moz-appearance: button;
+  appearance: button;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.discount-button:hover {
+  background-color: #5bc236;
+  color: #fff;
 }

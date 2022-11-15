@@ -1,39 +1,60 @@
-export const LoginButton = () => {
+export const LoginButton = (login) => {
   const button = document.createElement("button");
-  button.textContent = "Login";
+  button.textContent = "Sign in with NEAR";
   button.classList.add("login-button");
-  button.onclick = function () {
-    console.log("Login Ok");
-  };
+  button.onclick = login;
   return button;
 };
 
-export const LogoutButton = () => {
+export const LogoutButton = (logout) => {
   const button = document.createElement("button");
   button.textContent = "Logout";
   button.classList.add("logout-button");
+  button.onclick = logout;
+  return button;
+};
+
+export const LoginLoader = () => {
+  const button = document.createElement("button");
+  button.textContent = "Loading...";
+  button.classList.add("button-loader");
+
+  const inner = document.createElement("span");
+  inner.classList.add("button-text");
+
+  button.appendChild(inner);
+
+  return button;
+};
+
+export const ApplyDiscount = () => {
+  const button = document.createElement("button");
+  button.textContent = "Apply Discount";
+  button.classList.add("discount-button");
   button.onclick = function () {
-    console.log("Logout Ok");
+    console.log("Discount Ok");
   };
   return button;
 };
 
 export const Hamburger = () => {
-  const button = document.createElement("button");
+  const menubox = document.getElementsByClassName("outer-div");
+  const button = document.createElement("div");
   button.classList.add("menu-open");
+
+  const burgerspan = document.createElement("span");
+  button.appendChild(burgerspan);
+
   button.onclick = function () {
-    console.log("Menu Open");
+    this.classList.toggle("close");
+    Array.from(menubox).forEach((x) => {
+      if (x.style.display == "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "flex";
+      }
+    });
   };
 
-  const line1 = document.createElement("div");
-  line1.classList.add("menu-line1");
-  const line2 = document.createElement("div");
-  line2.classList.add("menu-line2");
-  const line3 = document.createElement("div");
-  line3.classList.add("menu-line3");
-
-  button.appendChild(line1);
-  button.appendChild(line2);
-  button.appendChild(line3);
   return button;
 };
