@@ -11,12 +11,13 @@ import {
   ParagraphBeforeLogin,
 } from "./head-para.js";
 
-const rootElement = document.querySelector(".vanilla-chatbot");
+const rootElement = document.querySelector(".vanilla-neargated");
+
 const CONTRACT_NAME = "rtb_v10.liv1.testnet";
 
-const ToggleWindow = (loggedIn, wallet, currentAccount, Bot) => {
+const ToggleWindow = (loggedIn, wallet, currentAccount) => {
   const Loader = LoginLoader();
-  const MidtableBefore = ParagraphBeforeLogin(Bot);
+  const MidtableBefore = ParagraphBeforeLogin();
   const MenuOpen = Hamburger();
   const Discount = ApplyDiscount();
 
@@ -51,7 +52,7 @@ const ToggleWindow = (loggedIn, wallet, currentAccount, Bot) => {
     console.log(user.accountId);
     mainWindow.appendChild(title(user.accountId));
     buttonsDiv.appendChild(Logout);
-    mainWindow.appendChild(ParagraphAfterLogin(Bot));
+    mainWindow.appendChild(ParagraphAfterLogin());
     mainWindow.appendChild(Discount);
     mainWindow.appendChild(buttonsDiv);
   } else {

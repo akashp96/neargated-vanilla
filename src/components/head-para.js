@@ -1,3 +1,5 @@
+import Bot from "../assets/bot.png";
+
 export const title = (account) => {
   const titleAcc = document.createElement("h3");
   titleAcc.textContent = `Hi ${account}`;
@@ -6,7 +8,7 @@ export const title = (account) => {
   return titleAcc;
 };
 
-export const ParagraphAfterLogin = (Bot) => {
+export const ParagraphAfterLogin = () => {
   const wholediv = document.createElement("div");
   wholediv.classList.add("account-main");
 
@@ -15,7 +17,7 @@ export const ParagraphAfterLogin = (Bot) => {
 
   const botimage = document.createElement("img");
   botimage.classList.add("bot-after");
-  botimage.src = { Bot };
+  botimage.src = Bot;
 
   // const list = document.createElement("ul");
   // list.classList.add("list");
@@ -41,13 +43,13 @@ export const ParagraphAfterLogin = (Bot) => {
   return wholediv;
 };
 
-export const ParagraphBeforeLogin = (Bot) => {
+export const ParagraphBeforeLogin = () => {
   const wholediv = document.createElement("div");
   wholediv.classList.add("account-main");
 
   const botimage = document.createElement("img");
   botimage.classList.add("bot");
-  botimage.src = { Bot };
+  botimage.src = Bot;
 
   const paradiv = document.createElement("div");
   paradiv.classList.add("account-details");
